@@ -128,8 +128,7 @@ string Phone_Directory::remove_entry(const string& name) // Exercise 1.7: please
 		}
 		delete[] the_directory;
 		the_directory = new_directory;
-		return "";
-
+		
 		}
 
 
@@ -138,7 +137,7 @@ string Phone_Directory::remove_entry(const string& name) // Exercise 1.7: please
 		// for (int i = index; i < size - 1; i++)
 		// the_directory[i] = the_directory[i + 1];
 
-		//return "";
+		return "";
 }
 
 // Private method implementation
