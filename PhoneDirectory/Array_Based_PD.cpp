@@ -122,21 +122,18 @@ string Phone_Directory::remove_entry(const string& name) // Exercise 1.7: please
 		return "";
 		}
 		else {
-		// Is going to be modified
-		modified = true;
-		// new directory to hold the updated directory with out the person you dont want in the directory.
-		Directory_Entry* new_directory = new Directory_Entry[capacity];
+			// Gets the full number on directory from index for example xxx-xxx-xxxx
+			string usernumber = the_directory[index].get_number();
 		for (int i = index; i < size - 1; i++) {
-		// shifting the directory over 1 spot and copying the index all of them minus the one the user deleted to new_directory
-		new_directory[i] = the_directory[i + 1];
-		return "";
+		//shifts the directory and rewrites the shifted directory to the same one
+		the_directory[i] = the_directory[i + 1];
+		//reduces the size of the directory by one each time it goes throught the loop
+		size--;
+		// returns the number
+		return usernumber;
 		}
-		// delete the old directory given
-		delete[] the_directory;
-		// copy the new_directory array to the main the_directory
-		the_directory = new_directory;
 		
-		}
+	}
 
 
 
@@ -144,7 +141,7 @@ string Phone_Directory::remove_entry(const string& name) // Exercise 1.7: please
 		// for (int i = index; i < size - 1; i++)
 		// the_directory[i] = the_directory[i + 1];
 
-		return "";
+		//return "";
 }
 
 // Private method implementation
