@@ -1,4 +1,4 @@
-/** Implementation of the Phone_Directory using an array
+﻿/** Implementation of the Phone_Directory using an array
 	of entries
 	@author Koffman and Wolfgang
 */
@@ -115,24 +115,30 @@ void Phone_Directory::save()
 	*/
 string Phone_Directory::remove_entry(const string& name) // Exercise 1.7: please complete the remove_entry() method - Ed/Kent
 {
-	
-	int index = find(name);
-	if (index == -1) 
-	if (the_directory[index].get_name() == name) {
-		for(int i = index; i < size - 1; i++) {
-			the_directory[i] = the_directory[i + 1];
+		int index = find(name);
+		if (index == -1)  {
+		return "";
 		}
-	}
-	else {
-		return "This name is not in the directory.";
-	}
-	
-	
-	// Hint: you can use the code below to shift names down in the directory to remove the selected entry specified by "index"
-	// for (int i = index; i < size - 1; i++)
+		else {
+		modified = true;
+		Directory_Entry* new_directory = new Directory_Entry[capacity];
+		for (int i = index; i < size - 1; i++) {
+		new_directory[i] = the_directory[i + 1];
+		return "";
+		}
+		delete[] the_directory;
+		the_directory = new_directory;
+		return "";
+
+		}
+
+
+
+		// Hint: you can use the code below to shift names down in the directory to remove the selected entry specified by "index"
+		// for (int i = index; i < size - 1; i++)
 		// the_directory[i] = the_directory[i + 1];
 
-	//return "";
+		//return "";
 }
 
 // Private method implementation
