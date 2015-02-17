@@ -115,18 +115,25 @@ void Phone_Directory::save()
 	*/
 string Phone_Directory::remove_entry(const string& name) // Exercise 1.7: please complete the remove_entry() method - Ed/Kent
 {
+	    // calling function find to return me the index of array where the name the user wants to delete is located
 		int index = find(name);
+		// Checks to see if that name is not in the directory else if the name is in the directory the next step is to delete it
 		if (index == -1)  {
 		return "";
 		}
 		else {
+		// Is going to be modified
 		modified = true;
+		// new directory to hold the updated directory with out the person you dont want in the directory.
 		Directory_Entry* new_directory = new Directory_Entry[capacity];
 		for (int i = index; i < size - 1; i++) {
+		// shifting the directory over 1 spot and copying the index all of them minus the one the user deleted to new_directory
 		new_directory[i] = the_directory[i + 1];
 		return "";
 		}
+		// delete the old directory given
 		delete[] the_directory;
+		// copy the new_directory array to the main the_directory
 		the_directory = new_directory;
 		
 		}
