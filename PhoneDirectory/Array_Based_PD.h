@@ -53,10 +53,23 @@ public:
 	void save();
 
 private:
+	/* Step 4 solved by Elizabeth Min */
 	class Directory_Entry /* Exercise 1.6: Please complete the definition of the Directory_Entry class here. - Ed/Kent */
 	{
 	public:
-	
+		Directory_Entry() {} // Default no-argument constructor 
+		Directory_Entry(std::string the_name, std::string the_number) {
+			//constructor not yet implemented 
+		}
+		std::string get_name() const {
+			return ""; // method not yet implemented 
+		}
+		std::string get_number() const {
+			return ""; // method not yet implemented  
+		}
+		void set_number(const std::string& new_number) {
+			// method not yet implemented 
+		}
 	private:
 
 	};
